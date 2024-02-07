@@ -52,11 +52,6 @@ const SearchScreen = () => {
       image: require('../assets/images/sweets.jpg'),
       query: 'sweets',
     },
-    {
-      name: 'Drinks',
-      image: require('../assets/images/drinks.jpeg'),
-      query: 'drinks',
-    },
   ];
 
   const fetchRecipes = async () => {
@@ -180,14 +175,14 @@ const SearchScreen = () => {
               />
             )}
           </ScrollView>
+          <View style={styles.randomRecipeButton}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={handleRandomRecipeButtonPress}>
+              <Text style={styles.buttonText}>Random Recipe</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      <View style={styles.randomRecipeButton}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={handleRandomRecipeButtonPress}>
-          <Text style={styles.buttonText}>Random Recipe</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -202,6 +197,7 @@ const styles = StyleSheet.create({
   },
   recipeContainer: {
     width: '100%',
+    height: 380,
     top: 180,
   },
   middle: {
@@ -248,7 +244,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     overflow: 'hidden',
     marginHorizontal: 5,
-    backgroundColor: 'white',
+    backgroundColor: '#000',
     paddingHorizontal: 15,
     paddingVertical: 10,
     justifyContent: 'center',
@@ -256,6 +252,7 @@ const styles = StyleSheet.create({
   },
   categoryText: {
     marginTop: 5,
+    color: '#FFD700',
     textAlign: 'center',
   },
   categoryImage: {
@@ -264,10 +261,9 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   randomRecipeButton: {
-    position: 'absolute',
-    bottom: 50,
     width: '90%',
-    left: '5%',
+    marginTop: 230,
+    marginLeft: '5%',
     height: 60,
   },
   button: {

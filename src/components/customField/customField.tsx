@@ -4,8 +4,8 @@ const CustomField = (props: any) => {
   return (
     <View style={styles.field}>
       <Image style={styles.image} source={{uri: props.imageSource}} />
-      <View style={styles.fieldText}>
-        <Text>{props.title}</Text>
+      <View style={styles.fieldTextView}>
+        <Text style={styles.fieldText}>{props.title}</Text>
       </View>
     </View>
   );
@@ -15,15 +15,18 @@ const styles = StyleSheet.create({
   field: {
     width: '100%',
     height: 110,
-    backgroundColor: 'white',
+    backgroundColor: '#000',
     marginBottom: 10,
     borderRadius: 20,
     justifyContent: 'center',
   },
-  fieldText: {
+  fieldTextView: {
     position: 'absolute',
     width: '50%',
     right: 40,
+  },
+  fieldText: {
+    color: '#FFD700',
   },
   image: {
     flex: 1,

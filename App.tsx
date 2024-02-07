@@ -15,8 +15,12 @@ function App() {
           component={HomeScreen}
           options={{
             title: 'Home',
+            headerTintColor: '#FFD700',
             headerTitleStyle: {
               fontWeight: 'bold',
+            },
+            headerStyle: {
+              backgroundColor: '#000',
             },
             headerTitleAlign: 'center',
           }}
@@ -26,9 +30,14 @@ function App() {
           component={SearchScreen}
           options={{
             title: 'Search',
+            headerTintColor: '#FFD700',
             headerTitleStyle: {
               fontWeight: 'bold',
             },
+            headerStyle: {
+              backgroundColor: '#000',
+            },
+            headerTitleAlign: 'center',
           }}
         />
       </Stack.Navigator>

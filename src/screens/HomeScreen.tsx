@@ -15,7 +15,10 @@ const HomeScreen = ({navigation}: any) => {
         />
       </View>
       <View style={styles.bottomContainer}>
-        <Text style={styles.title}>Welcome to Book of Recipes</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Welcome to Book of Recipes</Text>
+        </View>
+
         <TouchableOpacity style={styles.button} onPress={handlePress}>
           <Text style={styles.buttonText}>Go to Search Screen</Text>
         </TouchableOpacity>
@@ -26,6 +29,7 @@ const HomeScreen = ({navigation}: any) => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#000',
     flex: 1,
   },
   imageContainer: {
@@ -46,21 +50,31 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
+    color: '#FFD700',
   },
   button: {
-    backgroundColor: '#000',
+    backgroundColor: '#FFD700',
     padding: 10,
     borderRadius: 10,
     width: '90%',
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 50,
   },
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#FFD700',
+    color: '#000',
+  },
+  titleContainer: {
+    backgroundColor: '#000',
+    borderRadius: 20,
+    height: 60,
+    width: '90%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 120,
   },
 });
 

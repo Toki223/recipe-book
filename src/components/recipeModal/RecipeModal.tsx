@@ -87,6 +87,8 @@ const RecipeModal = ({isVisible, onClose, recipe}: any) => {
                 <HTML
                   source={{html: summary}}
                   contentWidth={Dimensions.get('window').width}
+                  tagsStyles={{a: {color: 'orange'}}}
+                  baseStyle={styles.htmlStyle}
                 />
               </View>
             </View>
@@ -119,13 +121,15 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#000',
   },
   subtitle: {
     fontSize: 16,
+    color: '#FFD700',
     marginBottom: 5,
   },
   segmentContainer: {
-    backgroundColor: 'white',
+    backgroundColor: '#000',
     borderRadius: 15,
     marginVertical: 10,
     padding: 10,
@@ -134,23 +138,28 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#FFD700',
   },
   segmentContent: {},
   ingredients: {
     fontSize: 14,
     marginVertical: 2,
     fontStyle: 'italic',
+    color: '#FFD700',
   },
   closeButton: {
     position: 'absolute',
     top: -50,
     right: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#000',
     borderRadius: 15,
     padding: 10,
   },
   closeButtonText: {
-    color: 'black',
+    color: '#FFD700',
+  },
+  htmlStyle: {
+    color: '#FFD700',
   },
 });
 
