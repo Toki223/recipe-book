@@ -99,19 +99,25 @@ const SearchScreen = () => {
   const handleRandomRecipeButtonPress = () => {
     fetchRandomRecipe();
   };
+
   useEffect(() => {
     async function getChosenRecipe() {
-      const configuration = {
-        method: 'get',
-        url: `https://api.spoonacular.com/recipes/${chosenRecipeId}/information`,
-        headers: {
-          'x-api-key': 'd9dd887e1b9a4a978942a4938bed9302',
-        },
-      };
-      const response = await axios(configuration);
-      console.log(response.data);
-      setChosenRecipe(response.data);
+      try {
+        const configuration = {
+          method: 'get',
+          url: `https://api.spoonacular.com/recipes/${chosenRecipeId}/information`,
+          headers: {
+            'x-api-key': 'd9dd887e1b9a4a978942a4938bed9302',
+          },
+        };
+        const response = await axios(configuration);
+        console.log(response.data);
+        setChosenRecipe(response.data);
+      } catch (error) {
+        console.error('Error fetching recipe:', error);
+      }
     }
+
     if (chosenRecipeId) {
       getChosenRecipe();
     }
@@ -143,6 +149,7 @@ const SearchScreen = () => {
             onChangeText={newText => setText(newText)}
             onFocus={() => setText('')}
             value={text}
+            cursorColor={'#FFD700'}
             onSubmitEditing={fetchRecipes}
           />
           <View style={styles.searchIcon}>
@@ -229,8 +236,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: '80%',
-    backgroundColor: 'white',
+    backgroundColor: '#000',
+    borderRadius: 20,
     textAlign: 'center',
+    color: '#FFD700',
   },
   search: {
     position: 'absolute',
